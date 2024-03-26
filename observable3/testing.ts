@@ -16,3 +16,13 @@ observable.subscribe(
     value=>console.log(value),
     error=>console.log(error)
 )
+
+// const obs=new Observable<string>(subscriber=>{
+//     subscriber.next("hello");
+//     subscriber.complete();
+// })
+// obs.subscribe(
+//     value=>console.log(value),
+//     error=>console.log(error)
+
+// )

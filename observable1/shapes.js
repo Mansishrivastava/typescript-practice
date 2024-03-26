@@ -13,27 +13,34 @@ var __extends = (this && this.__extends) || (function () {
         d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
     };
 })();
-var Shape = /** @class */ (function () {
-    function Shape(color) {
+var Shapes = /** @class */ (function () {
+    function Shapes(color) {
         this.color = color;
     }
-    return Shape;
+    return Shapes;
 }());
-var Circle = /** @class */ (function (_super) {
-    __extends(Circle, _super);
-    function Circle(color, radius) {
+var Rectangle = /** @class */ (function (_super) {
+    __extends(Rectangle, _super);
+    function Rectangle(color, length, width) {
         var _this = _super.call(this, color) || this;
         _this.color = color;
-        _this.radius = radius;
+        _this.length = length;
+        _this.width = width;
         return _this;
     }
-    Circle.prototype.calculateArea = function () {
-        return Math.PI * this.radius * this.radius;
+    /**
+     * calculatedArea
+     */
+    Rectangle.prototype.calculatedArea = function () {
+        return this.length * this.width;
     };
-    Circle.prototype.displayArea = function () {
-        console.log("This is a ".concat(this.color, " circle with the radius ").concat(this.radius, ". Area: ").concat(this.calculateArea()));
+    /**
+     * displayedArea
+     */
+    Rectangle.prototype.displayedArea = function () {
+        console.log("The ".concat(this.color, " rectangle area is") + this.calculatedArea());
     };
-    return Circle;
-}(Shape));
-var circle = new Circle('red', 5);
-circle.displayArea();
+    return Rectangle;
+}(Shapes));
+var rectangle1 = new Rectangle("red", 7, 10);
+rectangle1.displayedArea();

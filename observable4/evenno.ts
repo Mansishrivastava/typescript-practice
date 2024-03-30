@@ -1,4 +1,4 @@
-import { Observable, Subscriber, filter } from "rxjs";
+import { Observable, filter } from "rxjs";
 
 const evenno=new Observable<number>((subscriber)=>{
     const interval= setInterval(()=>{
@@ -13,4 +13,4 @@ const subcription=evenno.pipe(filter((number)=>number%2==0)).subscribe({
 })
 setTimeout(() => {
     subcription.unsubscribe();
-}, 5000);
+}, 4000);
